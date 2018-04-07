@@ -265,7 +265,7 @@ function setup(){
 	wordsmonkey = strmonkey.split(" ");
 	
 	//var strtypist = "read were pop trip wig yes toy eat your poop the tree treat food leaf reef quit drag tag rag yeah hi rip ripped sweet sip hello yellow free trees greet free year peek peel seek keep sleep freed seen wed reed she he her his their seed weak queer great greed pedal lead there play gray hay yard took look jar jagged sagged ragged lollypop quote quest quadruple it if its swap sheep"
-	var strtypist = "διαβάζω πριν ήμουν ταξίδι ναι τρώω δέντρο φέτα ψάρι ψαρεύω τράπουλα  πρόβατο κοιμάμαι αυτή αυτός αυτοί αδύναμος δυνατός"
+	var strtypist = "διαβάζω πριν ήμουν ταξίδι ναι τρώω δέντρο φέτα ψάρι ψαρεύω τράπουλα πρόβατο κοιμάμαι αυτή αυτός αυτοί αδύναμος δυνατός"
 	wordstypist = strtypist.split(" ");	
 	
 	//var strtop = "q w e r t y u i o p";
