@@ -38,17 +38,17 @@
 				<br />
 				<a href='https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Creative-Tail-Animal-monkey.svg/480px-Creative-Tail-Animal-monkey.svg.png' target='_blank'><img src='assets/monkey.png' border='0' alt='Monkey pic' height='100px' width='100px'/></a>
 				<br />
-				Μαϊμούδες: <span id="monkeys[0]">0</span> 
+				Monkeys: <span id="monkeys[0]">0</span> 
 				<br />
-				Κόστος μαϊμούς: <span id="monkeyCost[0]">10</span>
+				Monkey cost: <span id="monkeyCost[0]">10</span>
 				<br />
-				<button onclick="buyMonkey(0)">Αγόρασε μαϊμού</button>
+				<button onclick="buyMonkey(0)">Buy monkey</button>
 				<br />
-				Σούπερ μαϊμούδες: <span id="monkeys[1]">0</span>
+				Super monkeys: <span id="monkeys[1]">0</span>
 				<br />
-				Κόστος σούπερ μαϊμούς: <span id="monkeyCost[1]">50000</span>
+				Super monkey cost: <span id="monkeyCost[1]">50000</span>
 				<br />
-				<button onclick="buyMonkey(1)">Αγόρασε σούπερ μαϊμού</button>
+				<button onclick="buyMonkey(1)">Buy super monkey</button>
 				
 				
 			</div>
@@ -58,17 +58,17 @@
 				<br />
 				<a href='http://i.imgur.com/oiaS6tT.png' target='_blank'><img src='assets/typist.png' border='0' alt='computer pic' height='100px' width='100px'/></a>
 				<br />
-				Γραμματέας: <span id="typists[0]">0</span>
+				Typists: <span id="typists[0]">0</span>
 				<br />
-				Κόστος γραμματέα: <span id="typistCost[0]">1000</span>
+				Typist cost: <span id="typistCost[0]">1000</span>
 				<br />
-				<button onclick="buyTypist(0)">Αγόρασε γραμματέα</button>
+				<button onclick="buyTypist(0)">Buy typist</button>
 				<br />
-				Super δακτυλογράφοι: <span id="typists[1]">0</span>
+				Super typists: <span id="typists[1]">0</span>
 				<br />
-				Κόστος Super δακτυλογράφων: <span id="typistCost[1]">500000</span>
+				Super typist cost: <span id="typistCost[1]">500000</span>
 				<br />
-				<button onclick="buyTypist(1)">Αγόρασε σούπερ δακτυλογράφο</button>
+				<button onclick="buyTypist(1)">Buy super typist</button>
 				
 				
 				
@@ -80,30 +80,30 @@
 				<br />
 				<a href='http://i.imgur.com/nuSCENt.png' target='_blank'><img src='assets/computer.png' border='0' alt='computer pic' height='100px' width='100px'/></a>
 				<br />
-				Υπολογιστής: <span id="computers[0]">0</span>
+				Computers: <span id="computers[0]">0</span>
 				<br />
-				Κόστος υπολογιστή: <span id="computerCost[0]">10000</span>
+				Computer cost: <span id="computerCost[0]">10000</span>
 				<br/>
-				<button onclick="buyComputer(0)">Αγόρασε υπολογιστή</button>
+				<button onclick="buyComputer(0)">Buy computer</button>
 				<br />
-				Super Υπολογιστής: <span id="computers[1]">0</span>
+				Super computers: <span id="computers[1]">0</span>
 				<br />
-				Κόστος super Υπολογιστή: <span id="computerCost[1]">5000000</span>
+				Super computers cost: <span id="computerCost[1]">5000000</span>
 				<br />
-				<button onclick="buyComputer(1)">Αγόρασε super υπολογιστή</button>
+				<button onclick="buyComputer(1)">Buy super computer</button>
 			
 			</div>
           </div>
       </div>
     </div>
     <div class="yui-b">
-      <div id="secondary">Αναβαθμίσεις βοηθών πληκτρολόγησης! <br/>
-	  Κόστος αναβάθμισης Μαϊμούς: <span id="upgradecost[0]">12500</span>
-	  <button onclick="upgradeUnits(0);">Αναβάθμισε Μαϊμού</button>
-	  Κόστος αναβάθμισης γραμματέα: <span id="upgradecost[1]">125000</span>
-	  <button onclick="upgradeUnits(1);">Αναβάθμισε γραμματέα</button>
-	  Κόστος αναβάθμισης υπολογιστή: <span id="upgradecost[2]">937500</span>
-	  <button onclick="upgradeUnits(2);">Αναβάθμισε υπολογιστή</button>
+      <div id="secondary">Autotyper upgrades! <br/>
+	  Monkey upgrade cost: <span id="upgradecost[0]">12500</span>
+	  <button onclick="upgradeUnits(0);">Upgrade monkey</button>
+	  Typist upgrade cost: <span id="upgradecost[1]">125000</span>
+	  <button onclick="upgradeUnits(1);">Upgrade typist</button>
+	  Computer upgrade cost: <span id="upgradecost[2]">937500</span>
+	  <button onclick="upgradeUnits(2);">Upgrade computer</button>
 	  <br />
 		<p> Manual typing upgrades! </p>
 		Keyboard upgrade cost: <span id="keyboardupgradecost">100000</span>
