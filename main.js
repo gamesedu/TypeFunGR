@@ -261,14 +261,15 @@ function setup(){
 	wordsstart = ["α", "σ", "δ", "φ", "γ", "η", "ξ", "κ", "λ","ά"];
 	
 	//var strmonkey = "dad as sad lad lag sag gag hag had ask jag lass lads fads glad flag flask gags hags dads jags lads lasses has sass gaga ja flasks alfalfa";
-	var strmonkey = "την τον αν κότα πατάτα παιδί παπί άνοιξη χειμώνας και καλοκαίρι φαγητό";
+	var strmonkey = "την τον αν κότα πατάτα παιδί παπί άνοιξη χειμώνας και καλοκαίρι φαγητό μπαμπάς μαμά γειά ρωτάω ξυπνάω σας";
 	wordsmonkey = strmonkey.split(" ");
 	
-	var strtypist = "read were pop trip wig yes toy eat your poop the tree treat food leaf reef quit drag tag rag yeah hi rip ripped sweet sip hello yellow free trees greet free year peek peel seek keep sleep freed seen wed reed she he her his their seed weak queer great greed pedal lead there play gray hay yard took look jar jagged sagged ragged lollypop quote quest quadruple it if its swap sheep"
+	//var strtypist = "read were pop trip wig yes toy eat your poop the tree treat food leaf reef quit drag tag rag yeah hi rip ripped sweet sip hello yellow free trees greet free year peek peel seek keep sleep freed seen wed reed she he her his their seed weak queer great greed pedal lead there play gray hay yard took look jar jagged sagged ragged lollypop quote quest quadruple it if its swap sheep"
+	var strtypist = "διαβάζω πριν ήμουν ταξίδι ναι τρώω δέντρο φέτα ψάρι ψαρεύω τράπουλα  πρόβατο κοιμάμαι αυτή αυτός αυτοί αδύναμος δυνατός"
 	wordstypist = strtypist.split(" ");	
 	
 	//var strtop = "q w e r t y u i o p";
-	var strtop = "q w e r t y u i o p";
+	var strtop = "; ς ε ρ τ υ θ ι ο π";
 	wordstop = strtop.split(" ");
 	
 	var strtopwords = "tree try ire tie wit quit pretty pot wet queue yup pop it tire pepper proper prop row rye toy tower power tweet error quite erupt write writer popper pewter require your err poy poi tip pit prior tripe yip pip ripe wort tory typewriter type pro rope twerp rupture quiet rite wipe"
@@ -316,7 +317,8 @@ function eraseCookie(name) {
 
 function deleteSave() {
 		//ensure that user actually wants to delete their save
-		var isSure = confirm("Are you sure you want to delete your save? You'll never be able to get it back");
+		//var isSure = confirm("Are you sure you want to delete your save? You'll never be able to get it back");
+		var isSure = confirm("Σίγουρα θέλετε να σβήσετε το αποθηκευμένο παιχνίδι;");
 		if (isSure) {
 			eraseCookie("save");
 			//after, reload the page to previous standing. This will change current word, but whatever.
@@ -373,13 +375,13 @@ function loadSave() {
 		
 		//update achievement text
 		if(hasDone[0]) {
-			document.getElementById("achieveText").innerHTML += "Typed 10 words! <br>";
+			document.getElementById("achieveText").innerHTML += "Γράψατε 10 λέξεις! <br>";
 		}
 		if(hasDone[1]) {
-			document.getElementById("achieveText").innerHTML += "Typed 100 words! <br>";
+			document.getElementById("achieveText").innerHTML += "Γράψατε 100 λέξεις! <br>";
 		}
 		if(hasDone[2])  {
-			document.getElementById("achieveText").innerHTML += "Typed 1000 words! <br>";
+			document.getElementById("achieveText").innerHTML += "Γράψατε 1000 λέξεις! <br>";
 		}
 		//update rest of the ids for user
 		document.getElementById('wordpoints').innerHTML = wordpoints;
@@ -393,7 +395,8 @@ function loadSave() {
 	}
 	else { //if there was no cookie (new player or deleted save)
 		//pop up a message explaining
-		window.alert("Welcome to TypeFun! Typefun is an open source project intended to be a fun way to learn to type. To play, start by typing the current word into the input box. From there, it's up to you!\n\nFor more information, go to https://github.com/Emily1799/TypeFun");
+		//window.alert("Welcome to TypeFun! Typefun is an open source project intended to be a fun way to learn to type. To play, start by typing the current word into the input box. From there, it's up to you!\n\nFor more information, go to https://github.com/Emily1799/TypeFun");
+		window.alert("Καλως ηλθατε στο TypeFun! Στο παιχνίδ αυτό μαζεύετε λεφτά γράφοντας λέξεις.");
 	}
 }
 
@@ -463,17 +466,17 @@ window.setInterval(function(){
 	if((typed10 === false) && (numTyped >= 10)){
 		typed10 = true;
 		saveGame(); //if something is achieved, save the game automatically
-		document.getElementById("achieveText").innerHTML += "Typed 10 words! <br>";
+		document.getElementById("achieveText").innerHTML += "Γράψατε 10 λέξεις! <br>";
 	}
 	else if ((typed100 === false) && (numTyped >= 100)) {
 		typed100 = true;
 		saveGame();
-		document.getElementById("achieveText").innerHTML += "Typed 100 words! <br>";
+		document.getElementById("achieveText").innerHTML += "Γράψατε 100 λέξεις! <br>";
 	}
 	else if ((typed1000 === false) && (numTyped >= 1000)) {
 		typed1000 = true;
 		saveGame();
-		document.getElementById("achieveText").innerHTML += "Typed 1000 words! <br>";
+		document.getElementById("achieveText").innerHTML += "Γράψατε 1000 λέξεις! <br>";
 	}	
 	//set hasDone to correct value
 	hasDone = [typed10, typed100, typed1000];
