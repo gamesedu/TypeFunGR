@@ -269,7 +269,7 @@ function setup(){
 	wordstypist = strtypist.split(" ");	
 	
 	//var strtop = "q w e r t y u i o p";
-	var strtop = "; ς ε ρ τ υ θ ι ο π";
+	var strtop = "ς ε ρ τ υ θ ι ο π";
 	wordstop = strtop.split(" ");
 	
 	var strtopwords = "tree try ire tie wit quit pretty pot wet queue yup pop it tire pepper proper prop row rye toy tower power tweet error quite erupt write writer popper pewter require your err poy poi tip pit prior tripe yip pip ripe wort tory typewriter type pro rope twerp rupture quiet rite wipe"
