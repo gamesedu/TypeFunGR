@@ -263,7 +263,14 @@ function upgradeType() {
 
 //maybe add more words here... declares some lists and then makes them into an array. I'm way too lazy to type out array format for so many words, so make the client do it. If it needs to be faster for some reason, I can fix this later.
 function setup(){
-	
+	//180408a fetch text file++++++++++++++++
+	fetch('wordlist.gr.txt')
+  .then(response => response.text())
+  .then(text => console.log(text))
+  // outputs the content of the text file
+  //  rawFile.open("GET", file, false);
+//180408a fetch text file---------------------------
+
 	//wordsstart = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
 	wordsstart = ["α", "σ", "δ", "φ", "γ", "η", "ξ", "κ", "λ","ά"];
 	wordlist_by_level[0]=wordsstart;
