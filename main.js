@@ -270,8 +270,13 @@ fetch('wordlist.gr.txt')
   .then(response => response.text())
   .then((data) => {
 //    console.log(data)
-	wordlist_by_level=data.split("\n")
-	console.log(wordlist_by_level)
+	word_line_split=data.split("\n");
+	word_line_split.forEach(function(entry) {
+    	wordlist_by_level.push(entry.split(" "));
+    	//console.log(wordlist_by_level);
+	});
+
+	console.log(wordlist_by_level);
   })
 
   // outputs the content of the text file
@@ -280,32 +285,32 @@ fetch('wordlist.gr.txt')
 
 	//wordsstart = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
 	wordsstart = ["α", "σ", "δ", "φ", "γ", "η", "ξ", "κ", "λ","ά"];
-	wordlist_by_level[0]=wordsstart;
+	//wordlist_by_level[0]=wordsstart;
 
 	//var strmonkey = "dad as sad lad lag sag gag hag had ask jag lass lads fads glad flag flask gags hags dads jags lads lasses has sass gaga ja flasks alfalfa";
 	var strmonkey = "την τον αν κότα πατάτα παιδί παπί άνοιξη χειμώνας και καλοκαίρι φαγητό μπαμπάς μαμά γειά ρωτάω ξυπνάω σας";
 	wordsmonkey = strmonkey.split(" ");
-	wordlist_by_level[1]=wordsmonkey;
+	//wordlist_by_level[1]=wordsmonkey;
 
 	//var strtypist = "read were pop trip wig yes toy eat your poop the tree treat food leaf reef quit drag tag rag yeah hi rip ripped sweet sip hello yellow free trees greet free year peek peel seek keep sleep freed seen wed reed she he her his their seed weak queer great greed pedal lead there play gray hay yard took look jar jagged sagged ragged lollypop quote quest quadruple it if its swap sheep"
 	var strtypist = "διαβάζω πριν ήμουν ταξίδι ναι τρώω δέντρο φέτα ψάρι ψαρεύω τράπουλα πρόβατο κοιμάμαι αυτή αυτός αυτοί αδύναμος δυνατός"
 	wordstypist = strtypist.split(" ");	
-	wordlist_by_level[2]=wordstypist;
+	//wordlist_by_level[2]=wordstypist;
 
 	//var strtop = "q w e r t y u i o p";
 	var strtop = "ς ε ρ τ υ θ ι ο π";
 	wordstop = strtop.split(" ");
-	wordlist_by_level[3]=wordstop;
+	//wordlist_by_level[3]=wordstop;
 	
 	var strtopwords = "tree try ire tie wit quit pretty pot wet queue yup pop it tire pepper proper prop row rye toy tower power tweet error quite erupt write writer popper pewter require your err poy poi tip pit prior tripe yip pip ripe wort tory typewriter type pro rope twerp rupture quiet rite wipe"
 	
 	wordstoplong = strtopwords.split(" ");
-	wordlist_by_level[4]=wordstoplong;
+	//wordlist_by_level[4]=wordstoplong;
 
 	var strsuper = "reading popping tripping box dock cat kitten mood moo bark no son buy need want book bottle cup plate bag car crack smack went going mom light chair quick brown fox over down rain plane bread creep jump bead bat can more zoo soon box noon night back  grabbing freedom wristwatch quintuple meaty venting axe peace family saved dog goober zipper break creeped broken crooked pinky five vive virtual zany knave knack boxer mixup exit"
 	
 	wordssuper = strsuper.split(" ");
-	wordlist_by_level[5]=wordssuper;
+	//wordlist_by_level[5]=wordssuper;
 
 	loadSave();
 };
