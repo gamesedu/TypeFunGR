@@ -264,9 +264,14 @@ function upgradeType() {
 //maybe add more words here... declares some lists and then makes them into an array. I'm way too lazy to type out array format for so many words, so make the client do it. If it needs to be faster for some reason, I can fix this later.
 function setup(){
 	//180408a fetch text file++++++++++++++++
-	fetch('wordlist.gr.txt')
+	//fetch('wordlist.gr.txt')  .then(response => response.text())  .then(text => console.log(text))
+
+fetch('wordlist.gr.txt')
   .then(response => response.text())
-  .then(text => console.log(text))
+  .then((data) => {
+    console.log(data)
+  })
+
   // outputs the content of the text file
   //  rawFile.open("GET", file, false);
 //180408a fetch text file---------------------------
@@ -348,7 +353,7 @@ function deleteSave() {
 
 function loadSave() {
 	cookie = readCookie("save");
-	console.log(cookie);
+	console.log("COOKIE:"+cookie);
 	if(cookie){
 		//reset all those lovely vars...
 		var cookiearr = cookie.split(",").map(Number);
