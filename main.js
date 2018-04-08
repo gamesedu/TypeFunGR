@@ -269,7 +269,9 @@ function setup(){
 fetch('wordlist.gr.txt')
   .then(response => response.text())
   .then((data) => {
-    console.log(data)
+//    console.log(data)
+	wordlist_by_level=data.split("\n")
+	console.log(wordlist_by_level)
   })
 
   // outputs the content of the text file
