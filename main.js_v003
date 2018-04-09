@@ -13,16 +13,13 @@ var nextupgradecost = [0, 0, 0];
 var typeupgradebought = 0;
 
 //arrays of words
-var wordlist_by_level=[]; //jon Wordlists based on level 180408
+var wordlist_by_level=[]; //jon Wordlists based on level
 var wordsstart = [];
 var wordstop = [];
 var wordstoplong = [];
 var wordsmonkey = [];
 var wordstypist = [];
 var wordssuper = [];
-
-//
-var gifts_bought_arr=[]; //jon added 180409
 
 //TODO: achievements
 
@@ -269,18 +266,18 @@ function setup(){
 	//180408a fetch text file++++++++++++++++
 	//fetch('wordlist.gr.txt')  .then(response => response.text())  .then(text => console.log(text))
 
-	fetch('wordlist.gr.txt')
-	  .then(response => response.text())
-	  .then((data) => {
-	//    console.log(data)
-		word_line_split=data.split("\n");
-		word_line_split.forEach(function(entry) {
-	    	wordlist_by_level.push(entry.split(" "));
-	    	//console.log(wordlist_by_level);
-		});
+fetch('wordlist.gr.txt')
+  .then(response => response.text())
+  .then((data) => {
+//    console.log(data)
+	word_line_split=data.split("\n");
+	word_line_split.forEach(function(entry) {
+    	wordlist_by_level.push(entry.split(" "));
+    	//console.log(wordlist_by_level);
+	});
 
-		console.log(wordlist_by_level);
-	  })
+	console.log(wordlist_by_level);
+  })
 
   // outputs the content of the text file
   //  rawFile.open("GET", file, false);
@@ -407,9 +404,7 @@ function loadSave() {
 		hasDone[0] = cookiearr[26];
 		hasDone[1] = cookiearr[27];
 		hasDone[2] = cookiearr[28];
-
-		gifts_bought_arr=cookiearr[29].split(";"); //added by Jon 180509a -GET all bought gifts
-
+		
 		//update achievement text
 		if(hasDone[0]) {
 			document.getElementById("achieveText").innerHTML += "Γράψατε 10 λέξεις! <br>";
