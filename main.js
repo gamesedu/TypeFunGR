@@ -408,7 +408,7 @@ function loadSave() {
 		hasDone[1] = cookiearr[27];
 		hasDone[2] = cookiearr[28];
 
-		gifts_bought_arr=cookiearr[29].split(";"); //added by Jon 180509a -GET all bought gifts
+		gifts_bought_arr=cookiearr[29].split("|"); //added by Jon 180509a -GET all bought gifts
 
 		//update achievement text
 		if(hasDone[0]) {
