@@ -22,7 +22,8 @@ var wordstypist = [];
 var wordssuper = [];
 
 //
-var gifts_bought_arr=[]; //jon added 180409
+///var gifts_bought_arr=[]; //jon added 180409
+var gifts_bought_arr=[2, 3, 5]; //jon added 180409 -- gifts that are bought
 
 //TODO: achievements
 
@@ -404,10 +405,12 @@ function loadSave() {
 		
 		//achievements
 		numTyped = cookiearr[25]
+		
 		hasDone[0] = cookiearr[26];
 		hasDone[1] = cookiearr[27];
 		hasDone[2] = cookiearr[28];
-
+console.log("/nDEBUG cookie==="+cookie);
+console.log("/nDEBUG cookiearr29==="+cookiearr[29]);
 		gifts_bought_arr=cookiearr[29].split("|"); //added by Jon 180509a -GET all bought gifts
 
 		//update achievement text
@@ -474,7 +477,8 @@ function saveGame() {
 	
 	//achievements
 	savetxt += String(numTyped) + ",";
-	savetxt += hasDone.join(",") + ","
+	savetxt += hasDone.join(",") + ",";
+	savetxt += gifts_bought_arr.join("|") + ",";// added by jon 180409a
 	
 	//set cookie
 	createCookie('save',savetxt,700); //keep for ~2 years
