@@ -23,7 +23,7 @@ var wordssuper = [];
 
 //
 ///var gifts_bought_arr=[]; //jon added 180409
-var gifts_bought_arr=[2, 3, 5]; //jon added 180409 -- gifts that are bought
+var gifts_bought_arr=['2', '3', '5']; //jon added 180409 -- gifts that are bought
 
 //TODO: achievements
 
@@ -337,11 +337,18 @@ function createCookie(name,value,days) {
 }
 
 function readCookie(name) {
-    var nameEQ = name + "=";
+    var nameEQ = name + "=";  //search for save=...
     var ca = document.cookie.split(';');
+   			//console.log("/nca=");//###############################################################################################
+	        //console.log(ca);//###############################################################################################
+
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        while (c.charAt(0)==' ') {
+        	c = c.substring(1,c.length);
+        }
+		//console.log("/nc.substring(nameEQ.length,c.length)=");//###############################################################################################
+        //console.log(c.substring(nameEQ.length,c.length));//###############################################################################################
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
     return null;
@@ -367,7 +374,8 @@ function loadSave() {
 	console.log("COOKIE:"+cookie);
 	if(cookie){
 		//reset all those lovely vars...
-		var cookiearr = cookie.split(",").map(Number);
+		//var cookiearr = cookie.split(",").map(Number); //ORIG accepts ONLY NUMBERS puts NaN to other
+		var cookiearr = cookie.split(",");//.map(Number);
 
 		points = cookiearr[0];
 		typeof points;
@@ -406,13 +414,21 @@ function loadSave() {
 		//achievements
 		numTyped = cookiearr[25]
 		
+
+
+		//hasDone[0] = parseBool(cookiearr[26]);
+		//hasDone[1] = parseBool(cookiearr[27]);
+		//hasDone[2] = parseBool(cookiearr[28]);
 		hasDone[0] = cookiearr[26];
 		hasDone[1] = cookiearr[27];
-		hasDone[2] = cookiearr[28];
-console.log("/nDEBUG cookie==="+cookie);
-console.log("/nDEBUG cookiearr29==="+cookiearr[29]);
+		hasDone[2] = cookiearr[28];		
+		cookiearr[29]=String(cookiearr[29]);
+//console.log(cookiearr);//###############################################################################################
+//console.log("/nDEBUG cookiearr26==="+hasDone[0]); //###############################################################################################
+//console.log("/nDEBUG cookiearr29==="+cookiearr[29]); //###############################################################################################
+		
 		gifts_bought_arr=cookiearr[29].split("|"); //added by Jon 180509a -GET all bought gifts
-
+console.log(gifts_bought_arr);//###############################################################################################
 		//update achievement text
 		if(hasDone[0]) {
 			document.getElementById("achieveText").innerHTML += "Γράψατε 10 λέξεις! <br>";
@@ -439,6 +455,14 @@ console.log("/nDEBUG cookiearr29==="+cookiearr[29]);
 		window.alert("Καλως ηλθατε στο TypeFun! Στο παιχνίδ αυτό μαζεύετε λεφτά γράφοντας λέξεις.");
 	}
 }
+//To convert strings
+function parseBool(value) {
+    return (typeof value === "undefined") ? 
+           false : 
+           // trim using jQuery.trim()'s source 
+           value === "true";
+}
+
 
 function saveGame() {
 		//set up variables to be restored in the future, split with the , symbol. Wherever there is an [i], there is a backslash between each index
@@ -477,7 +501,7 @@ function saveGame() {
 	
 	//achievements
 	savetxt += String(numTyped) + ",";
-	savetxt += hasDone.join(",") + ",";
+	savetxt += hasDone.join(",") + ","; // Should Uncomment this
 	savetxt += gifts_bought_arr.join("|") + ",";// added by jon 180409a
 	
 	//set cookie
